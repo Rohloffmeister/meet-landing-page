@@ -1,31 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  
+
   <title>Frontend Mentor | Meet landing page</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
+    body {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      font-family: "Red Hat Display";
+      text-align: center;
+    }
+
+    main {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    h1{
+      font-size: 3em;
+    }
+
+    .top-div {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+    }
+    .inner-top-div{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .inner-top-div img{
+      max-width: 33vh;
+    }
+    .inner-top-div p{
+      
+      width: 50%;
+    }
+    .inner-top-div h1{
+      inline-size: 70%;
+    }
+
+    .btn {
+      color: white;
+      border-radius: 30px;
+      border: none;
+      width: 10vw;
+      height: 5vh;
+
+    }
+
+    .btn a {
+      color: rgb(168, 245, 255);
+    }
+  </style>
 </head>
+
 <body>
-  Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.
+  <main>
 
-  Download v1.3
-  What is it?
+    <img src="assets/logo.svg">
+    <div class="top-div">
+      <img src="assets/desktop/image-hero-left.png">
+      <div class="inner-top-div">
+        <h1>Group Chat for Everyone</h1>
+        <p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
+        <div class="buttons">
+          <button style="background-color: rgb(0, 172, 193)" class="btn">Download <a>v1.3</a></button>
+          <button style="background-color: rgb(142, 36, 170)" class="btn">What is it?</button>
+        </div>
+      </div>
+      <img src="assets/desktop/image-hero-right.png">
+    </div>
 
-  01
-  Built for modern use
 
-  Smarter meetings, all in one place
 
-  Send messages, share files, show your screen, and record your meetings — all in one 
-  workspace. Control who can join with invite-only team access, data encryption, and data export.
 
-  02
-  Experience more together
-  Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
+    01
+    Built for modern use
 
-  Download v1.3
+    Smarter meetings, all in one place
+
+    Send messages, share files, show your screen, and record your meetings — all in one
+    workspace. Control who can join with invite-only team access, data encryption, and data export.
+
+    02
+    Experience more together
+    Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
+
+    Download v1.3
+  </main>
 </body>
+
 </html>
