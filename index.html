@@ -33,13 +33,12 @@
 
       main > img:first-child {
         margin-top: 5vh;
-        width: 10vw;
-       
+        width: 15vw;
       }
       h2 {
         font-weight: 900;
         color: #27293d;
-        font-size: clamp(3em, 5vh, 7em);
+        font-size: clamp(2em, 5vh, 7em);
       }
       p {
         color: #9c9ca7;
@@ -81,7 +80,7 @@
       }
 
       .inner-top-div h1 {
-        font-size: clamp(3em, 8vh, 9em);
+        font-size: clamp(2.0em, 8vh, 9em);
         font-weight: 900;
         color: #27293d;
         margin-bottom: 1rem;
@@ -102,12 +101,12 @@
 
       .btn {
         color: #fafafa;
-        border-radius: 30px;
+        border-radius: 100px;
         border: none;
         padding: 1.5vh 2vw;
         width: fit-content;
         font-weight: 650;
-        font-size:clamp(1.5em, 1.56vh, 4em);
+        font-size: clamp(1em, 1.56vh, 4em);
         cursor: pointer;
       }
 
@@ -139,7 +138,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: clamp(1em, 2.8vw, 1.75em);
+        font-size: clamp(1em, 3vh, 1.75em);
         color: #666; /* Textfarbe */
         background-color: rgb(250, 250, 250); /* Hintergrundfarbe des Kreises */
       }
@@ -173,6 +172,7 @@
       .bottom-text h3 {
         color: #56949f;
         letter-spacing: 0.25rem;
+        font-size: clamp(1em,3vh,4em);
       }
 
       .bottom-text p {
@@ -202,13 +202,13 @@
       }
       footer h2 {
         color: #faf7f5;
-        font-size: clamp(3em, 6vh, 7em);
+        font-size: clamp(2em, 6vh, 7em);
       }
       footer p {
         color: #e5f2f3;
         text-align: left;
         inline-size: 20%;
-        font-size: clamp(1em, 2vh, 3em);
+        font-size: clamp(1.4em, 2vh, 3em);
         font-weight: 500;
       }
       footer .btn {
@@ -223,25 +223,75 @@
         color: #e1bcfd;
         margin-left: 0.4em;
       }
-      .outter-circle-container{
+      .outter-circle-container {
         display: flex;
         align-items: start;
         justify-content: center;
-        position:relative;
+        position: relative;
         z-index: 4;
         height: 5vh;
         width: 100vw;
-        
       }
       #second-circle {
-        
         height: auto;
         justify-content: start;
-        margin-top:0;
-        padding-top:0;
+        margin-top: 0;
+        padding-top: 0;
         position: absolute;
-        bottom:-30px;
+        bottom: -30px;
+      }
+      .tablet {
+        display: none;
+      }
+      .mobile {
+        display: none;
+      }
+      @media (max-width: 1020px) {
+        .pc {
+          display: none;
+        }
+        .tablet {
+          margin-top: 8vh;
+          display: block;
+          width: 100%;
+        }
+        .inner-top-div{
+          width: 60%;
+        }
+        .inner-top-div p{
+          inline-size: 120%;
+        }
+        .btn{
+          padding: 3vh 5vw;
+        }
+        .img-grid{
+          margin:0;
+        }
+        .img-grid img{
+          width: 22vw;
+        }
+        .bottom-text h2{
+          inline-size: 75%;
+        }
+        .bottom-text p{
+          inline-size: 75%;
+        }
+        footer {
+          height:80vh;
+          background-image: url("assets/tablet/image-footer.jpg");
+        }
+        footer .content{
+          flex-direction: column;
+          text-align: center;
+          justify-content: flex-start;
         
+        }
+        footer .content p{
+          text-align: center;
+          inline-size: 80%;
+          margin-bottom: 5vh;
+        }
+      
       }
     </style>
   </head>
@@ -249,17 +299,19 @@
   <body>
     <main>
       <img src="assets/logo.svg" />
+      <img class="tablet" src="assets/tablet/image-hero.png" />
+
       <div class="top-div">
-        <img src="assets/desktop/image-hero-left.png" />
+        <img class="pc" src="assets/desktop/image-hero-left.png" />
+
         <div class="inner-top-div">
           <h1>Group Chat for Everyone</h1>
           <p>
             Meet makes it easy to connect with others face-to-face virtually and
             collaborate across any device.
           </p>
-          
         </div>
-        <img src="assets/desktop/image-hero-right.png" />
+        <img class="pc" src="assets/desktop/image-hero-right.png" />
       </div>
       <div class="buttons">
         <button style="background-color: rgb(0, 172, 193)" class="btn">
