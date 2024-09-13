@@ -1,108 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <title>Frontend Mentor | Meet landing page</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
 
-  <title>Frontend Mentor | Meet landing page</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: rgb(250, 250, 250);
+        font-family: "Red Hat Display", sans-serif;
+      }
 
-    body {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      font-family: "Red Hat Display";
-      text-align: center;
-    }
+      main {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+      }
 
-    main {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-    }
-    h1{
-      font-size: 3em;
-    }
+      main > img:first-child {
+        margin-top: 5vh;
+        width: 10vw;
+       
+      }
+      h2 {
+        font-weight: 900;
+        color: #27293d;
+        font-size: clamp(3em, 5vh, 7em);
+      }
+      p {
+        color: #9c9ca7;
+        font-weight: 650;
+        font-size: clamp(1em, 2.8vw, 1.75em);
+      }
 
-    .top-div {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      flex-direction: row;
-    }
-    .inner-top-div{
-      display:flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-    .inner-top-div img{
-      max-width: 33vh;
-    }
-    .inner-top-div p{
-      
-      width: 50%;
-    }
-    .inner-top-div h1{
-      inline-size: 70%;
-    }
+      .top-div {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        margin-top: 7vh;
+      }
 
-    .btn {
-      color: white;
-      border-radius: 30px;
-      border: none;
-      width: 10vw;
-      height: 5vh;
+      .inner-top-div {
+        width: 33%;
+        text-align: center;
+        z-index: 2;
+      }
 
-    }
+      .top-div img {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 30vw;
+        height: auto;
+        z-index: 1;
+      }
 
-    .btn a {
-      color: rgb(168, 245, 255);
-    }
-  </style>
-</head>
+      .top-div img:first-of-type {
+        left: -2vw;
+      }
 
-<body>
-  <main>
+      .top-div img:last-of-type {
+        right: -2vw;
+      }
 
-    <img src="assets/logo.svg">
-    <div class="top-div">
-      <img src="assets/desktop/image-hero-left.png">
-      <div class="inner-top-div">
-        <h1>Group Chat for Everyone</h1>
-        <p>Meet makes it easy to connect with others face-to-face virtually and collaborate across any device.</p>
-        <div class="buttons">
-          <button style="background-color: rgb(0, 172, 193)" class="btn">Download <a>v1.3</a></button>
-          <button style="background-color: rgb(142, 36, 170)" class="btn">What is it?</button>
+      .inner-top-div h1 {
+        font-size: clamp(3em, 8vh, 9em);
+        font-weight: 900;
+        color: #27293d;
+        margin-bottom: 1rem;
+      }
+
+      .inner-top-div p {
+        width: 80%;
+        margin: 0 auto 2rem;
+      }
+
+      .buttons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        width: 100vw;
+      }
+
+      .btn {
+        color: #fafafa;
+        border-radius: 30px;
+        border: none;
+        padding: 1.5vh 2vw;
+        width: fit-content;
+        font-weight: 650;
+        font-size:clamp(1.5em, 1.56vh, 4em);
+        cursor: pointer;
+      }
+
+      .btn a {
+        color: rgb(168, 245, 255);
+      }
+      .circle-container {
+        margin-top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 200px; /* Anpassen nach Bedarf */
+      }
+
+      .line {
+        width: 2px;
+        height: 7vh; /* Länge der Linie */
+        background-color: #ccc; /* Farbe der Linie */
+        z-index: 5;
+      }
+
+      .circle {
+        z-index: 5;
+        width: 6vh;
+        height: 6vh;
+        border-radius: 50%;
+        border: 2px solid #ccc; /* Farbe des Kreises */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(1em, 2.8vw, 1.75em);
+        color: #666; /* Textfarbe */
+        background-color: rgb(250, 250, 250); /* Hintergrundfarbe des Kreises */
+      }
+
+      .img-grid {
+        margin: 5vh auto;
+        display: grid;
+
+        grid-template-columns: repeat(4, 4fr);
+      }
+
+      .img-grid img {
+        width: 15vw;
+        margin: 0 1vw;
+        height: auto;
+        border-radius: 10px;
+      }
+      .bottom-text {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10vh;
+      }
+
+      .bottom-text h2 {
+        inline-size: 30%;
+
+        margin-top: 1vh;
+      }
+      .bottom-text h3 {
+        color: #56949f;
+        letter-spacing: 0.25rem;
+      }
+
+      .bottom-text p {
+        margin-top: 0;
+        inline-size: 35%;
+      }
+
+      footer {
+        position: relative;
+        height: 40vh;
+        width: 100%;
+        background-image: url(assets/desktop/image-footer.jpg);
+        background-size: cover;
+      }
+      footer .content {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(88, 153, 171, 0.8);
+      }
+      footer h2 {
+        color: #faf7f5;
+        font-size: clamp(3em, 6vh, 7em);
+      }
+      footer p {
+        color: #e5f2f3;
+        text-align: left;
+        inline-size: 20%;
+        font-size: clamp(1em, 2vh, 3em);
+        font-weight: 500;
+      }
+      footer .btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        background-color: #855fb0;
+      }
+      footer .btn a {
+        color: #e1bcfd;
+        margin-left: 0.4em;
+      }
+      .outter-circle-container{
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        position:relative;
+        z-index: 4;
+        height: 5vh;
+        width: 100vw;
+        
+      }
+      #second-circle {
+        
+        height: auto;
+        justify-content: start;
+        margin-top:0;
+        padding-top:0;
+        position: absolute;
+        bottom:-30px;
+        
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <img src="assets/logo.svg" />
+      <div class="top-div">
+        <img src="assets/desktop/image-hero-left.png" />
+        <div class="inner-top-div">
+          <h1>Group Chat for Everyone</h1>
+          <p>
+            Meet makes it easy to connect with others face-to-face virtually and
+            collaborate across any device.
+          </p>
+          
+        </div>
+        <img src="assets/desktop/image-hero-right.png" />
+      </div>
+      <div class="buttons">
+        <button style="background-color: rgb(0, 172, 193)" class="btn">
+          Download <a>v1.3</a>
+        </button>
+        <button style="background-color: rgb(142, 36, 170)" class="btn">
+          What is it?
+        </button>
+      </div>
+      <div class="circle-container">
+        <div class="line"></div>
+        <div class="circle">01</div>
+      </div>
+      <div class="img-grid">
+        <img src="assets/desktop/image-woman-in-videocall.jpg" />
+        <img src="assets/desktop/image-women-videochatting.jpg" />
+        <img src="assets/desktop/image-men-in-meeting.jpg" />
+        <img src="assets/desktop/image-man-texting.jpg" />
+      </div>
+      <div class="bottom-text">
+        <h3>BUILT FOR MODERN USE</h3>
+        <h2>Smarter meetings, all in one place</h2>
+        <p>
+          Send messages, share files, show your screen, and record your meetings
+          — all in one workspace. Control who can join with invite-only team
+          access, data encryption, and data export.
+        </p>
+      </div>
+      <div class="outter-circle-container">
+        <div class="circle-container" id="second-circle">
+          <div class="line"></div>
+          <div class="circle">02</div>
         </div>
       </div>
-      <img src="assets/desktop/image-hero-right.png">
-    </div>
-
-
-
-
-    01
-    Built for modern use
-
-    Smarter meetings, all in one place
-
-    Send messages, share files, show your screen, and record your meetings — all in one
-    workspace. Control who can join with invite-only team access, data encryption, and data export.
-
-    02
-    Experience more together
-    Stay connected with reliable HD meetings and unlimited one-on-one and group video sessions.
-
-    Download v1.3
-  </main>
-</body>
-
+    </main>
+    <footer>
+      <div class="content">
+        <h2>Experience more<br />together</h2>
+        <p>
+          Stay connected with reliable HD meetings and unlimited one-on-one and
+          group video sessions.
+        </p>
+        <div class="btn">Download <a>v1.3</a></div>
+      </div>
+    </footer>
+  </body>
 </html>
