@@ -136,7 +136,7 @@ p {
   margin: 5vh auto;
   display: grid;
 
-  grid-template-columns: repeat(4, 4fr);
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .img-grid img {
@@ -289,6 +289,7 @@ footer .btn a {
   }
 
 .img-grid img {
+  margin: 5px;
   width: 40vw;
 }
 .inner-top-div {
