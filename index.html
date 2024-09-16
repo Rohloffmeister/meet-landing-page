@@ -14,7 +14,11 @@
     <title>Frontend Mentor | Meet landing page</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
-
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
       body {
         margin: 0;
         padding: 0;
@@ -80,7 +84,7 @@
       }
 
       .inner-top-div h1 {
-        font-size: clamp(2.0em, 8vh, 9em);
+        font-size: clamp(2em, 8vh, 9em);
         font-weight: 900;
         color: #27293d;
         margin-bottom: 1rem;
@@ -172,7 +176,7 @@
       .bottom-text h3 {
         color: #56949f;
         letter-spacing: 0.25rem;
-        font-size: clamp(1em,3vh,4em);
+        font-size: clamp(1em, 3vh, 4em);
       }
 
       .bottom-text p {
@@ -255,43 +259,75 @@
           display: block;
           width: 100%;
         }
-        .inner-top-div{
+        .inner-top-div {
           width: 60%;
         }
-        .inner-top-div p{
+        .inner-top-div p {
           inline-size: 120%;
         }
-        .btn{
+        .btn {
           padding: 3vh 5vw;
         }
-        .img-grid{
-          margin:0;
+        .img-grid {
+          margin: 0;
         }
-        .img-grid img{
+        .img-grid img {
           width: 22vw;
         }
-        .bottom-text h2{
+        .bottom-text h2 {
           inline-size: 75%;
         }
-        .bottom-text p{
+        .bottom-text p {
           inline-size: 75%;
         }
         footer {
-          height:80vh;
+          height: 80vh;
           background-image: url("assets/tablet/image-footer.jpg");
         }
-        footer .content{
+        footer .content {
           flex-direction: column;
           text-align: center;
           justify-content: flex-start;
-        
         }
-        footer .content p{
+        footer .content p {
           text-align: center;
           inline-size: 80%;
           margin-bottom: 5vh;
         }
+      }
+      @media (max-width: 426px) {
+        body {
+          overflow-x: hidden; /* Verhindert horizontales Scrollen */
+        }
+        .img-grid {
+          grid-template: repeat(2, 2fr) / repeat(2, 2fr);
+        }
       
+      .img-grid img {
+        width: 40vw;
+      }
+      .inner-top-div {
+        width: 90vw;
+      }
+      .inner-top-div h1 {
+        font-size: clamp(1em, 24vw, 3em);
+      }
+      .inner-top-div p {
+        width: 90vw;
+      }
+
+      footer .content h2 {
+        font-size: clamp(1em, 10vw, 3em);
+      }
+      footer .content p {
+        font-size: clamp(0.5em, 7vw, 2em);
+      }
+      .tablet {
+        width: 110vw;
+      }
+      main > img:first-child {
+        width: 40vw;
+      }
       }
     </style>
   </head>
